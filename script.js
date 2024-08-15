@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const EVENTS_DELAY = 20000;
 
@@ -229,6 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
         keyCountGroup.style.display = 'block';
     });
 
+   
 
     const generateClientId = () => {
         const timestamp = Date.now();
