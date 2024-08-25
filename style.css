@@ -1,70 +1,61 @@
 body {
     font-family: 'Roboto', sans-serif;
-   background-image:url(https://cdn.glitch.global/70fbf7c2-e384-4df5-bf43-c181501ff88d/thumbnails%2Fphoto_2024-08-13_09-59-04.jpg?1723532620256);
-      background-size:cover;
-    background-size:cover;
-
-  background-repeat: repeat-x;
-    background-size: 100% 100%;
+    background-color: #f5f7fa;
+    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
 }
-h5 {
-   color:red;
-      position: relative;
-      font-family: sans-serif;
-      text-transform: uppercase;
-      font-size: 20px;
-      letter-spacing: 4px;
-      overflow: hidden;
-      background: linear-gradient(90deg, #000, #fff, #000);
-      background-repeat: no-repeat;
-      background-size: 80%;
-      animation: animate 3s linear infinite;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color:rgba(255, 255, 255, 0);
-  
-    }
-
-    @keyframes animate {
-      0% {
-        background-position: -500%;
-      }
-      100% {
-        background-position: 500%;
-      }
-    }
-
 
 .container {
-   box-shadow: 0px 0px 5px 2px blue;
-    background-color: #f1f7ff;
+     background-color: #fbfdff;
     border-radius: 10px;
-    width: 100%;
-    text-align: center;
-  border: 3px solid blue;
-  border-radius: 45px;
-    transition: all 1.5s ease;
-    padding: 13px;
-    max-width: 240px;
+    box-shadow: 0 4px 20px ;
+    padding: 30px;
+    max-width: 260px;
+ 
     width: 100%;
     text-align: center;
 }
-  .container:hover{
-    border: yellow solid 2px;
-   box-shadow: 0px 0px 5px 2px gold;
- 
-   border-radius: 70px;
-
-  }
 
 h1 {
     margin-bottom: 25px;
     font-size: 24px;
     color: #007bff;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.game-option {
+    border: 1px solid #ddd;
+    border-radius: 10px 3px;
+     text-align: center;
+    cursor: pointer;
+  background-color: #e5e5e58f;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.game-option img {
+    width: 40px;
+    border-radius: 1500px;
+    margin-bottom: 10px;
+}
+
+.game-option p {
+    font-weight: 500;
+    color: #555;
+}
+
+.game-option:hover, .game-option.selected {
+    transform: scale(1.05);
+    border-color: #007bff;
 }
 
 .form-group {
@@ -78,44 +69,67 @@ label {
     font-weight: 500;
     color: #555;
 }
+h11 {
+ border: 3px solid #d0e8ff;
+  
+   border-radius: 8px;
+    background-color: #d0e8ff;
 
-select {
     width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    border: 1px solid #000;
-    border-radius: 8px;
-    background: #fff;
-    transition: border-color 0.3s;
 }
 
-select:focus {
-    border-color: #007bff;
+.key-slider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.key-slider input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: #ddd;
+    outline: none;
+    transition: background 0.3s;
+}
+
+.key-slider input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #00e0a1;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.key-slider input[type="range"]:hover::-webkit-slider-thumb {
+    background: #00e0a1;
+}
+
+#keyValue {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
 }
 
 button {
-  background-color: #1b52a5;
-    color: #ffffff;
-    padding: 5px 25px;
-    border-radius: 100px;
-    border: rgb(39, 226, 110) 3px solid;
-    font-size: 1.2rem;
+    background-color: #d0e8ff;
+    color: #007bff;
+    border: 1px solid #007bff;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 1.1s ease;
-    font-family: sans-serif;
-    border: #a2e0ff 3px double;
-    box-shadow: 0px 0px 20px 2px #4776a2;
+    transition: background-color 0.3s;
+    margin-top: 20px;
 }
 
 button:hover {
-    background-color: #ffffff;
-    color: #1b52a5;
-   
-    border: #0059ff 4px double;
-    
-    font-family: sans-serif;
-    box-shadow: 0px 0px 10px 2px #ebffc4;
+    background-color: #007bff;
+  color: #fff;
 }
 
 .hidden {
@@ -125,7 +139,7 @@ button:hover {
 .progress-bar {
     background-color: #f5f7fa;
     border-radius: 8px;
-  border: 2px green solid;
+  border: 2px blue solid;
     overflow: hidden;
     margin-top: 25px;
     height: 35px;
@@ -138,6 +152,7 @@ button:hover {
     width: 0;
     transition: width 0.5s;
 }
+
 
 #progressText {
     margin-top: 15px;
@@ -158,7 +173,36 @@ button:hover {
     border-radius: 8px;
     margin-right: 12px;
 }
+h5 {
+   color:red;
+      position: relative;
+      font-family: sans-serif;
+      text-transform: uppercase;
+      font-size: 20px;
+      letter-spacing: 4px;
+      overflow: hidden;
+      background: linear-gradient(45deg, #000, #fff, #000);
+      background-repeat: no-repeat;
+      background-size: 80%;
+      animation: animate 3s linear infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color:rgba(255, 255, 255, 0);
+  
+    }
 
+    @keyframes animate {
+      0% {
+        background-position: -500%;
+      }
+      100% {
+        background-position: 500%;
+      }
+    }
+.mss {
+
+
+  color: #f5f7fa00;
+}
 .copyKeyBtn {
     background-color: #28a745;
     border: none;
